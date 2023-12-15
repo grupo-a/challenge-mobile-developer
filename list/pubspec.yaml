@@ -10,8 +10,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   core_services:
     path: ./core_services
+  flutter_mobx: 2.0.4
+  dartz: ^0.10.1
+  validatorless: ^1.2.1  
+  top_snackbar_flutter: ^2.1.1
 
 
 dev_dependencies:
