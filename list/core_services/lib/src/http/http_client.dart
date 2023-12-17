@@ -150,7 +150,9 @@ class CoreHttpClient implements CoreRequester {
     try {
       response = await invokeDio(dio);
 
-      if (response.statusCode == 200 || response.statusCode == 204) {
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
         return fromJson(response.data);
       } else {
         return fromJsonError(response.data);

@@ -11,7 +11,8 @@
             "forgot_password": "Esqueci a senha",
             "login": "Login",
             "register": "Cadastrar",
-            "under_development": "Em desenvolvimento"
+            "under_development": "Em desenvolvimento",
+            "register_success": "Cadastrado com sucesso"
         }
     }
 }

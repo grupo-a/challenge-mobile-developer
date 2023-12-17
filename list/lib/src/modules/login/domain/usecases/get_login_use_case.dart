@@ -3,9 +3,9 @@ import '../../../../utils/usecase.dart';
 import '../entities/login_entity.dart';
 import '../repositories/login_repository.dart';
 
-class GetTokenUseCase
+class GetLoginUseCase
     extends UseCaseWithParameter<LoginEntity, LoginEntity> {
-  GetTokenUseCase(this.repository);
+  GetLoginUseCase(this.repository);
 
   final LoginRepository repository;
 

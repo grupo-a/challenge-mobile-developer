@@ -9,7 +9,7 @@ class LoginModel implements LoginEntity {
   @override
   final String? password;
   @override
-  final int? id;
+  final String? id;
   @override
   final String? token;
   @override
@@ -26,7 +26,7 @@ class LoginModel implements LoginEntity {
   LoginModel copyWith({
     String? email,
     String? password,
-    int? id,
+    String? id,
     String? token,
     DateTime? createdAt,
   }) {
@@ -53,15 +53,17 @@ class LoginModel implements LoginEntity {
     return LoginModel(
       email: map['email'] != null ? map['email'] as String : null,
       password: map['password'] != null ? map['password'] as String : null,
-      id: map['id'] != null ? map['id'] as int : null,
+      id: map['id'] != null ? map['id'] as String : null,
       token: map['token'] != null ? map['token'] as String : null,
-      createdAt: map['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(map['createdAt'] as int) : null,
+      createdAt: map['createdAt'] != null
+          ? DateTime.tryParse(map['createdAt'] as String)
+          : null,
     );
   }
 
   @override
   String toJson() => json.encode(toMap());
 
-  factory LoginModel.fromJson(String source) => LoginModel.fromMap(json.decode(source) as Map<String, dynamic>);
-
+  factory LoginModel.fromJson(String source) =>
+      LoginModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }

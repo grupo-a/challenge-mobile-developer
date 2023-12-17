@@ -15,7 +15,10 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
     var response = await coreRequester.fetch(
       url:
           '${EnvironmentInterface.api}/login?email=${params.email}&password=${params.password}',
-      fromJson: (value) => LoginModel.fromMap(value),
+      fromJson: (value) {
+        if ((value as List).isEmpty) return LoginModel();
+        return LoginModel.fromMap(value.first);
+      },
       fromJsonError: (value) => value,
     );
 

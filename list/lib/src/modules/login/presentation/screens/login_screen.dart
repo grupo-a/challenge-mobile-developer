@@ -216,10 +216,14 @@ class _LoginScreenState extends State<LoginScreen> with Messages {
                                 ),
                                 onPressed: () async {
                                   if (store.isValid) {
-                                    final bool result = await store.login();
+                                    final bool result = await store.register();
                                     if (result) {
-                                      NavigationService().pushReplacementNamed(
-                                          ListAppRoutes.studentList);
+                                      showSuccess(
+                                        Tr.of(
+                                          context,
+                                          "list.login.register_success",
+                                        ),
+                                      );
                                     } else {
                                       showError(store.error);
                                     }

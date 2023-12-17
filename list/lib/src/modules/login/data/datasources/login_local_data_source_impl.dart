@@ -3,10 +3,10 @@ import 'package:lists_joao_nogueira/src/modules/login/domain/entities/login_enti
 
 import '../../domain/datasources/login_datasource.dart';
 
-class LoginRemoteDataSourceImpl implements LoginLocalDataSource {
+class LoginLocalDataSourceImpl implements LoginLocalDataSource {
   final CoreStorageInterface coreStorage;
 
-  LoginRemoteDataSourceImpl({required this.coreStorage});
+  LoginLocalDataSourceImpl({required this.coreStorage});
 
   @override
   Future<void> saveUser(LoginEntity params) async {
@@ -15,7 +15,7 @@ class LoginRemoteDataSourceImpl implements LoginLocalDataSource {
     );
     await coreStorage.save(
       key: 'userId',
-      value: params.id.toString(),
+      value: params.id!,
     );
   }
 

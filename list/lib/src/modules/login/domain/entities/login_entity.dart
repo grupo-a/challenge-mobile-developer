@@ -1,7 +1,7 @@
 abstract class LoginEntity {
   final String? email;
   final String? password;
-  final int? id;
+  final String? id;
   final String? token;
   final DateTime? createdAt;
 
