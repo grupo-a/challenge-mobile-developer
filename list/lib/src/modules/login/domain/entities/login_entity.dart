@@ -12,4 +12,6 @@ abstract class LoginEntity {
     this.token,
     this.createdAt,
   });
+
+  toJson() {}
 }
