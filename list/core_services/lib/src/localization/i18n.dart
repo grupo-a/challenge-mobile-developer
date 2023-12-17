@@ -9,7 +9,7 @@ class I18n {
 
   final String filePath;
 
-  static List<String> availableLanguages = ['pt', 'en'];
+  static List<String> availableLanguages = ['pt'];
 
   static Locale defaultLocale = const Locale('pt');
 
