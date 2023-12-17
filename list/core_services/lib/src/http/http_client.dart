@@ -19,7 +19,7 @@ CoreResponse<T> helperFromJsonError<T>(dynamic data) {
   return response;
 }
 
-abstract class IRequester {
+abstract class CoreRequester {
   List<Interceptor> get interceptors;
 
   Future auth({
@@ -57,7 +57,7 @@ abstract class IRequester {
   });
 }
 
-class CoreHttpClient implements IRequester {
+class CoreHttpClient implements CoreRequester {
   final List<Interceptor> customInterceptors;
 
   CoreHttpClient({
@@ -166,8 +166,7 @@ class CoreHttpClient implements IRequester {
     final token = await CoreStorage().getToken();
 
     if (token != null) {
-      dio.options.headers
-          .addAll({'Authorization': 'Bearer $token'});
+      dio.options.headers.addAll({'Authorization': 'Bearer $token'});
     }
   }
 
