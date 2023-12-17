@@ -1,0 +1,17 @@
+{
+    "list": {
+        "login": {
+            "user": "Usuário",
+            "user_empty": "Usuário requerido",
+            "user_invalid": "E-mail inválido",
+            "password": "Senha",
+            "password_required": "Senha requerida",
+            "forgot_user": "Esqueci o usuário",
+            "or": " ou ",
+            "forgot_password": "Esqueci a senha",
+            "login": "Login",
+            "register": "Cadastrar",
+            "under_development": "Em desenvolvimento"
+        }
+    }
+}

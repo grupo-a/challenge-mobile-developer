@@ -4,7 +4,7 @@ import 'package:lists_joao_nogueira/src/utils/theme/theme_app.dart';
 import 'list_app_routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'src/modules/login/screens/login_screen.dart';
+import 'src/modules/login/presentation/screens/login_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({
@@ -35,6 +35,9 @@ class AppWidget extends StatelessWidget {
       initialRoute: ListAppRoutes.login,
       routes: {
         ListAppRoutes.login: (context) => const LoginScreen(),
+        ListAppRoutes.studentList: (context) => Container(
+              color: Colors.red,
+            ),
       },
       // onGenerateRoute: (routeSettings) {
       //   return AppControllerImplementation().onGenerateRoute(routeSettings);
