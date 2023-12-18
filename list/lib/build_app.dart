@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'app_widget.dart';
 import 'environment_interface.dart';
 import 'list_app_init.dart';
-import 'src/modules/login/screens/splash_screen.dart';
+import 'src/modules/login/presentation/screens/splash_screen.dart';
 
 Future<void> buildApp() async {
   EnvironmentInterface.initialize();
