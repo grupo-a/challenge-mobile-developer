@@ -1,6 +1,7 @@
 # lists_joao_nogueira
 
 Arquivo .env e launch.json fornecidos para execução pelo vscode.
+
 Para executar via linha de comando, fornecer o parâmetro `api` via `dart-define`
 
 ## Arquitetura
