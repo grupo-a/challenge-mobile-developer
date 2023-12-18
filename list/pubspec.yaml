@@ -27,7 +27,9 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_launcher_icons: "^0.13.1"
   build_runner: ^2.4.7
+  hive_generator: ^2.0.1
   mobx_codegen: ^2.4.0
+  mockito: ^5.4.4
 
 flutter_launcher_icons:
   android: "launcher_icon"

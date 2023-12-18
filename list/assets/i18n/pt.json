@@ -13,6 +13,15 @@
             "register": "Cadastrar",
             "under_development": "Em desenvolvimento",
             "register_success": "Cadastrado com sucesso"
+        },
+        "students": {
+            "appbar": "Alunos",
+            "search": "Buscar...",
+            "add_student": "Adicionar aluno",
+            "menu": "Menu",
+            "help": "Ajuda",
+            "notifications": "Notificações",
+            "profile": "Perfil"
         }
     }
 }

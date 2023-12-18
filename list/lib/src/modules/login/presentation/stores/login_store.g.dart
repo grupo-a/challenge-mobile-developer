@@ -49,6 +49,14 @@ mixin _$LoginStore on LoginStoreBase, Store {
     return _$loginAsyncAction.run(() => super.login());
   }
 
+  late final _$registerAsyncAction =
+      AsyncAction('LoginStoreBase.register', context: context);
+
+  @override
+  Future<bool> register() {
+    return _$registerAsyncAction.run(() => super.register());
+  }
+
   late final _$LoginStoreBaseActionController =
       ActionController(name: 'LoginStoreBase', context: context);
 

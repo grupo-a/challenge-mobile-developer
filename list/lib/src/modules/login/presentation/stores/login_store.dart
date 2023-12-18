@@ -1,12 +1,11 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:lists_joao_nogueira/global_instance.dart';
-import 'package:lists_joao_nogueira/src/modules/login/domain/entities/login_entity.dart';
-import 'package:lists_joao_nogueira/src/modules/login/domain/usecases/get_login_use_case.dart';
-import 'package:lists_joao_nogueira/src/modules/login/domain/usecases/load_user_use_case.dart';
-import 'package:lists_joao_nogueira/src/modules/login/domain/usecases/post_user_use_case.dart';
-import 'package:lists_joao_nogueira/src/modules/login/domain/usecases/save_user_use_case.dart';
+import '../../../../../global_instance.dart';
+import '../../domain/entities/login_entity.dart';
+import '../../domain/usecases/get_login_use_case.dart';
+import '../../domain/usecases/load_user_use_case.dart';
+import '../../domain/usecases/post_user_use_case.dart';
+import '../../domain/usecases/save_user_use_case.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../data/models/login_model.dart';
@@ -44,6 +43,11 @@ abstract class LoginStoreBase with Store {
 
   final emailEC = TextEditingController(text: '');
   final passwordEC = TextEditingController(text: '');
+
+  void dispose() {
+    emailEC.dispose();
+    passwordEC.dispose();
+  }
 
   bool get isValid => formKey.currentState!.validate();
 
