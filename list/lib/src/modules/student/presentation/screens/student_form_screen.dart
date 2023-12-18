@@ -50,49 +50,10 @@ class _StudentsFormScreenState extends State<StudentsFormScreen> with Messages {
           backgroundColor: theme.primaryColor,
         ),
         backgroundColor: Colors.white,
-        body: Padding(
-          padding: const EdgeInsets.all(10),
+        body: const Padding(
+          padding: EdgeInsets.all(10),
           child: Column(
-            children: [
-              TextFormField(
-                controller: store.searchController,
-                keyboardType: TextInputType.text,
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  ),
-                  fillColor: Colors.white,
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  filled: true,
-                  label: Text(
-                    Tr.of(
-                      context,
-                      "list.students.search",
-                    ),
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  border: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
+            children: [],
           ),
         ),
       ),

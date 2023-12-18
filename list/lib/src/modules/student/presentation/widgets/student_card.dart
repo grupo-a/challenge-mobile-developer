@@ -19,21 +19,25 @@ class StudentCard extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Column(
-              children: [
-                Text(
-                  student.name ?? '',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    student.name ?? '',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  student.academicRecord ?? '',
-                ),
-                Text(
-                  'CPF: ${student.cpf ?? ''}',
-                ),
-              ],
+                  Text(
+                    student.academicRecord ?? '',
+                  ),
+                  Text(
+                    'CPF: ${student.cpf ?? ''}',
+                  ),
+                ],
+              ),
             ),
           ),
           Column(
@@ -42,13 +46,13 @@ class StudentCard extends StatelessWidget {
                 onPressed: () {
                   onEdit(student.id ?? '');
                 },
-                icon: const Icon(Icons.edit),
+                icon: const Icon(Icons.edit_outlined),
               ),
               IconButton(
                 onPressed: () {
                   onDelete(student.id ?? '');
                 },
-                icon: const Icon(Icons.delete),
+                icon: const Icon(Icons.delete_outline),
               ),
             ],
           )

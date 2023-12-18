@@ -62,7 +62,7 @@ class _StudentsListScreenState extends State<StudentsListScreen> with Messages {
             elevation: 1,
           ),
           onPressed: () {
-            NavigationService().navigateTo(ListAppRoutes.studentList);
+            NavigationService().navigateTo(ListAppRoutes.createStudent);
           },
           icon: const Icon(
             Icons.add,
