@@ -34,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> with Messages {
   @override
   void dispose() {
     passwordFocus.dispose();
+    store.dispose();
     super.dispose();
   }
 
