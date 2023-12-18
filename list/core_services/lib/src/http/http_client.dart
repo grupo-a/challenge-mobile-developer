@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../models/response.model.dart';
-import '../repositories/login.repository.dart';
+import '../repositories/core_storage.dart';
 import 'interceptors/core_header_interceptor.dart';
 
 CoreResponse<T> helperFromJsonError<T>(dynamic data) {
@@ -19,7 +19,7 @@ CoreResponse<T> helperFromJsonError<T>(dynamic data) {
   return response;
 }
 
-abstract class IRequester {
+abstract class CoreRequester {
   List<Interceptor> get interceptors;
 
   Future auth({
@@ -57,7 +57,7 @@ abstract class IRequester {
   });
 }
 
-class CoreHttpClient implements IRequester {
+class CoreHttpClient implements CoreRequester {
   final List<Interceptor> customInterceptors;
 
   CoreHttpClient({
@@ -150,7 +150,9 @@ class CoreHttpClient implements IRequester {
     try {
       response = await invokeDio(dio);
 
-      if (response.statusCode == 200 || response.statusCode == 204) {
+      if (response.statusCode != null &&
+          response.statusCode! >= 200 &&
+          response.statusCode! < 300) {
         return fromJson(response.data);
       } else {
         return fromJsonError(response.data);
@@ -163,11 +165,10 @@ class CoreHttpClient implements IRequester {
   }
 
   Future<void> _addToken(Dio dio) async {
-    final userData = await LoginRepository().get();
+    final token = await CoreStorage().getToken();
 
-    if (userData.data != null) {
-      dio.options.headers
-          .addAll({'Authorization': 'Bearer ${userData.data!.accessToken}'});
+    if (token != null) {
+      dio.options.headers.addAll({'Authorization': 'Bearer $token'});
     }
   }
 
